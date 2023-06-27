@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Input } from '../Input';
 import { Result } from '../Result';
+import { Button } from '../Button';
+import { margin } from '@mui/system';
 export const NoteBook = () => {
   const [name, setName] = useState('');
   const [family, setFamily] = useState('');
@@ -13,6 +15,7 @@ export const NoteBook = () => {
   return (
     <>
       <Input
+        lable={'first-name : '}
         type={'text'}
         id={'first-name'}
         name={'first-name'}
@@ -20,6 +23,7 @@ export const NoteBook = () => {
         onChange={(event) => setName(event.target.value)}
       />
       <Input
+        lable={'last-name : '}
         type={'text'}
         id={'last-name'}
         name={'last-name'}
@@ -27,6 +31,7 @@ export const NoteBook = () => {
         onChange={(event) => setFamily(event.target.value)}
       />
       <Input
+        lable={'city : '}
         type={'text'}
         id={'city'}
         name={'city'}
@@ -34,6 +39,20 @@ export const NoteBook = () => {
         onChange={(event) => setCity(event.target.value)}
       />
       <Result firstName={name} lastName={family} city={city} />
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Button
+          backgroundColor={'red'}
+          color={'white'}
+          text={'log event'}
+          onClick={(event) => console.log(event)}
+        />
+        <Button
+          backgroundColor={'green'}
+          color={'black'}
+          text={'text'}
+          onClick={() => console.log('Button has been clicked')}
+        />
+      </div>
     </>
   );
 };

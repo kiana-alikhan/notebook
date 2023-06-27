@@ -3,10 +3,10 @@
 import React from 'react';
 
 export const Button = (props) => {
-  const { children, onClick, backgroundColor, color } = props;
+  const { children, onClick, backgroundColor, color, text } = props;
   return (
     <button onClick={onClick} style={{ color, backgroundColor }}>
-      {children}
+      {children} {text}
     </button>
   );
 };
